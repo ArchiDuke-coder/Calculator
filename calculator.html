@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính</title>
+    <style>
+        td{
+            border: 1px solid gray;
+            width: 150px; height:20px;
+        }
+    </style>
+</head>
+<body>
+    <h1> Calculator</h1>
+    <input type="number" value="a" id="num1" onmouseout="Number1()">
+    <input type="number" value="b" id="num2" onmouseout="Number2()">
+    <br>
+    <br>
+    <input type="button" value="Addition(+)" onclick="Add()">
+    <input type="button" value="Substraction(-)" onclick="Substract()">
+    <input type="button" value="Multiplication(x)" onclick="Multiply()">
+    <input type="button" value="Division(/)" onclick="Divide()">
+    <br>
+    <br>
+    <p style="margin-bottom: 0px"><i>Result</i></p>
+    <table>
+        <tr>
+            <td id="result"></td>
+        </tr>
+    </table>
+
+
+</body>
+</html>
+<script>
+    // cập nhật giá trị 2 số trong ô
+    function Number1(){
+        let a = +document.getElementById("num1").value;
+        return a;
+    }
+    function Number2(){
+        let b = +document.getElementById("num2").value;
+        return b;
+    }
+    // các hàm tính
+    function Add(){
+        document.getElementById("result").innerHTML = (Number1() + Number2()).toFixed(5);
+    }
+    function Substract(){
+        document.getElementById("result").innerHTML = (Number1() - Number2()).toFixed(5);
+    }
+    function Multiply(){
+        document.getElementById("result").innerHTML = (Number1() * Number2()).toFixed(5);
+    }
+    function Divide(){
+        document.getElementById("result").innerHTML = (Number1() / Number2()).toFixed(5);
+    }
+
+</script>
