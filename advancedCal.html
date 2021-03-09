@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính</title>
+    <style>
+        td{
+            border: 1px solid gray;
+            width: 150px; height:20px;
+        }
+    </style>
+</head>
+<body>
+<h1> Calculator</h1>
+<input type="number" value="a" id="num1" onmouseout="Number1()">
+<input type="number" value="b" id="num2" onmouseout="Number2()">
+<br>
+<br>
+<input type="button" value="Addition(+)" id="1" onclick="Calculate(this.id)">
+<input type="button" value="Substraction(-)" id="2" onclick="Calculate(this.id)">
+<input type="button" value="Multiplication(x)" id="3" onclick="Calculate(this.id)">
+<input type="button" value="Division(/)" id="4" onclick="Calculate(this.id)">
+<br>
+<br>
+<p style="margin-bottom: 0px"><i>Result</i></p>
+<table>
+    <tr>
+        <td id="result"></td>
+    </tr>
+</table>
+
+
+</body>
+</html>
+<script>
+    // cập nhật giá trị 2 số trong ô
+    function Number1(){
+        let a = +document.getElementById("num1").value;
+        return a;
+    }
+    function Number2(){
+        let b = +document.getElementById("num2").value;
+        return b;
+    }
+
+    // Hàm tính
+    function Calculate(opr) {
+        switch (opr) {
+            case "1":
+                document.getElementById("result").innerHTML = (Number1() + Number2()).toFixed(5);
+                break;
+            case "2":
+                document.getElementById("result").innerHTML = (Number1() - Number2()).toFixed(5);
+                break;
+            case "3":
+                document.getElementById("result").innerHTML = (Number1() * Number2()).toFixed(5);
+                break;
+            case "4":
+                document.getElementById("result").innerHTML = (Number1() / Number2()).toFixed(5);
+                break;
+        }
+    }
+
+</script>
